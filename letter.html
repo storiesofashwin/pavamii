@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== MOBILE SAFE SCROLL SYSTEM ===== */
+html, body{
+margin:0;
+padding:0;
+height:auto;
+min-height:100%;
+overflow-x:hidden;
+overflow-y:auto;
+-webkit-overflow-scrolling:touch;
+}
+
+body{
+background:linear-gradient(135deg,#ffe4f0,#fff);
+font-family:Poppins,sans-serif;
+text-align:center;
+}
+
+/* Page wrapper keeps content centered but scrollable */
+.page{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:30px 12px;
+box-sizing:border-box;
+}
+
+/* Card */
+.card{
+background:white;
+padding:40px 30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+max-width:520px;
+width:100%;
+animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(15px);}
+to{opacity:1;}
+}
+
+h2{
+font-family:'Playfair Display',serif;
+color:#ff4d8d;
+}
+
+p{
+margin-top:15px;
+line-height:1.7;
+color:#444;
+}
+
+/* Button */
+.btn{
+margin-top:22px;
+padding:12px 26px;
+border:none;
+border-radius:999px;
+background:linear-gradient(135deg,#ff4d8d,#ff85a2);
+color:white;
+cursor:pointer;
+box-shadow:0 0 15px rgba(255,77,141,.4);
+transition:.25s;
+}
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(255,77,141,.6);
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 PAGE MUSIC -->
+<audio id="bgMusic" loop autoplay></audio>
+
+<div class="page">
+<div class="card">
+
+<h2>unakk aaha</h2>
+
+<p>
+I know ithokke ichiri cringe aaahn, but anyways nintaduthallee...njn vere evde poi cringe aavum.
+i wish i could just come over there unkoode engeyaavath ponam polirukk and unkoodave irukkanam polirukk,
+aanaal right now we can't do that becuase of nmmde situation and so i'm sending you this.
+Just know that even though we are miles apart you will always be the person closest to my heart.
+and i promise to stay with you in all the ups and downs, and even in your darkest days,
+naan un koodave iruppe.  chahe kuch bhi ho jaaye, main hamesha tumhare saath rahunga.
+pinne ith kazhinj vannechum nee kore effor idanond njn ithrennu deserve cheyynilla, bla bla bla
+parayanda, enikk worry cheyyaan aytt adhinum maathram kaaryangalonnulla, ente life is pretty easy
+pakshe you have a lot to think of all the time and still you chose to stay with me, i dont know
+athilum vallya effort vere ondonn. ninde presence pothum enakk, nee en koode iruntha podhumm.
+I love youu😘!
+</p>
+
+<button class="btn" onclick="goBack()">ithumme njekk!!</button>
+
+</div>
+</div>
+
+<script>
+/* ========= PAGE MUSIC ========= */
+const PAGE_MUSIC = "m3.mp3";   // change song here
+const music = document.getElementById("bgMusic");
+music.src = PAGE_MUSIC;
+
+/* Smooth fade */
+music.volume = 0;
+music.play().catch(()=>{});
+let v = 0;
+const fade = setInterval(()=>{
+v += 0.05;
+music.volume = v;
+if(v >= 1) clearInterval(fade);
+},120);
+
+/* Back */
+function goBack(){
+window.location.href="./page3.html";
+}
+</script>
+
+</body>
+</html>
